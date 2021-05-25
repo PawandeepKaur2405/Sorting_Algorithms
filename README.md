@@ -27,7 +27,8 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )   
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )  
 
-**TIME COMPLEXITY : O(n^2)**
+**TIME COMPLEXITY : O(n^2)**  
+**SPACE COMPLEXITY : O(1)**
 
 ## 2. Insertion Sort
 
@@ -46,7 +47,8 @@ i = 3. 5 will move to the beginning and all other elements from 11 to 13 will mo
 i = 4. 6 will move to position after 5, and elements from 11 to 13 will move one position ahead of their current position.   
 5, 6, 11, 12, 13   
 
-**TIME COMPLEXITY : O(n^2)**
+**TIME COMPLEXITY : O(n^2)**  
+**SPACE COMPLEXITY : O(1)**
 
 ## 3. Selection Sort
 
@@ -68,4 +70,81 @@ Find the minimum element in arr[2...4] and place it at beginning of arr[2...4]
 Find the minimum element in arr[3...4] and place it at beginning of arr[3...4]  
 11 12 22 25 64 
 
-**TIME COMPLEXITY : O(n^2)**
+**TIME COMPLEXITY : O(n^2)**  
+**SPACE COMPLEXITY : O(1)**
+
+## 4. Merge Sort
+
+It works on **Divide and Conquer** technique.
+
+1. Divide the array into two equal arrays until only 2 elements are present in the array.(This makes the problem small and hence reduces the sorting time)  
+2. Call your **merge_sort** function recursively for both halves.  
+3. Merge both halves using **merge** function.  
+
+**TIME COMPLEXITY : O(nlogn)**  
+**SPACE COMPLEXITY : O(n)** (Because we made extra temp arrays) 
+
+**DRAWBACKS :**
+1. Not efficient for short arrays.
+2. Runs through the entire array even if the array is sorted.
+3. Merge sort algorithm uses an addition space of O(n) for temporary arrays.
+
+## 5. Wave Sort
+  
+The elements are sorted in the **form of a wave** rather than ascending or descending order.  
+
+**arr[0] >= arr[1] <= arr[2] >= arr[3] <= arr[4] >= .........**
+
+**APPROACH :**  
+1. Iterate through elements by step of 2.  
+2. Check if element is smaller than the previous and  next element, then it's ok, just continue.  
+3. Otherwise, swap the elements.
+
+**TIME COMPLEXITY : O(n)**  
+
+## 6. Counting Sort
+
+This is not a comparison based sorting technique.
+
+**APPROACH:**  
+
+1. First find count of each distinct element of array.  
+2. Calculate position of each element.  
+3. Form a new sorted array based on these positions.
+
+**TIME COMPLEXITY : O(max(N,Ai))**  
+N -> size of the array  
+Ai -> max element of array  
+
+## 7. DNF Sort (Dutch National Flag Sort / 0,1,2 Sort)  
+
+This sorting technique is used to sort members in an array **only when there are 3 distinct elements.**  
+
+Application : Seggregate 0s and 1s in an array.  
+
+**TIME COMPLEXITY : O(n)**  
+**SPACE COMPLEXITY : O(1)**  
+
+## 8. Quick Sort
+
+It is **divide and conquer** Algorithm.  
+
+**APPROACH :**  
+1. Pick a **pivot element** from array.  
+2. **Partition** around pivot element.  
+3. Arrange smaller elements before the pivot element and larger elements after the pivot element. 
+
+[NOTE: We can pick first, last, median or any random element as pivot. But it should remain same for entire Array]  
+
+**TIME COMPLEXITY :   
+  for Average Case : O(nlogn)  
+  for Worst : O(n^2)**  
+  
+  For more details visit :   
+  for DNF Sort :  
+  https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/  
+  for Wave Sort :  
+  https://www.geeksforgeeks.org/sort-array-wave-form-2/  
+  for rest :  
+  https://www.geeksforgeeks.org/sorting-algorithms/
+  
